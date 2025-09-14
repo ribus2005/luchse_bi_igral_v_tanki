@@ -3,6 +3,13 @@ import numpy as np
 import sklearn
 #должна быть не ниже 1.7.0
 print("версия sklearn", sklearn.__version__)
+if version.parse(sklearn.__version__) >= version.parse("1.7.0"):
+  print("Версия удовлетворяет требованиям")
+else:
+  print("Версия слишком старая. Пожалуйста, обновите scikit-learn:")
+  print("pip install --upgrade scikit-learn")
+  exit()
+
 
 #загружаем датасетус
 iris = sklearn.datasets.load_iris()
