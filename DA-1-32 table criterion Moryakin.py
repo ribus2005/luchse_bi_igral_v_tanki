@@ -51,13 +51,16 @@ def main():
     petal_criterion = datasetus['petal length (cm)'] > datasetus['petal length (cm)'].median()
     #объединяем столбцы, записываем в таблицу
     datasetus['criterion'] = merge_columns(sepal_criterion, petal_criterion)
-    
+
+    PrevMaxRows = pd.get_option('display.max_rows')
+    PrevWidth = pd.get_option('display.width')
     #для вывода всей таблицы убираем лимит по количеству выводимых строк и увеличиваем ширину вывода
     set_display_params([('display.max_rows', None), ('display.width', 1000)])
-
-    
-    
     print(datasetus)
+    #возвращаем параметры вывода обратно
+    set_display_params([('display.max_rows', PrevMaxRows), ('display.width', PrevWidth)])
+    return 0
 
-
-main()
+ret_val = main()
+if ret_val != 0:
+    print(f"код ошибки {ret_val}")
