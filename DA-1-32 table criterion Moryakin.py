@@ -65,3 +65,5 @@ if __name__ == "__main__":
     ret_val = main()
     if ret_val != 0:
         print(f"код ошибки {ret_val}")
+    else:
+        print('успешное выполнение')
