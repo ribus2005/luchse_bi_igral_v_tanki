@@ -60,7 +60,8 @@ def main():
     #возвращаем параметры вывода обратно
     set_display_params([('display.max_rows', PrevMaxRows), ('display.width', PrevWidth)])
     return 0
-
-ret_val = main()
-if ret_val != 0:
-    print(f"код ошибки {ret_val}")
+    
+if __name__ == "__main__":
+    ret_val = main()
+    if ret_val != 0:
+        print(f"код ошибки {ret_val}")
