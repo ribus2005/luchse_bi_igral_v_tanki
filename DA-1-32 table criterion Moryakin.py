@@ -36,7 +36,11 @@ def main():
         return -1
     
     #загружаем датасетус
-    iris = sklearn.datasets.load_iris()
+    try:
+        iris = sklearn.datasets.load_iris()
+    except Exception as e:
+        print('ошибка загрузки датасета {e}')
+        return -2
     
     #делаем из iris dataset таблицу с данными
     datasetus = pd.DataFrame(data=iris.data, columns=iris.feature_names)
@@ -65,5 +69,3 @@ if __name__ == "__main__":
     ret_val = main()
     if ret_val != 0:
         print(f"код ошибки {ret_val}")
-    else:
-        print('успешное выполнение')
