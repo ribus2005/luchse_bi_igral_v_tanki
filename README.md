@@ -28,5 +28,5 @@ conditions = [
 ]
 
 result = create_feature_from_conditions(df, conditions, 'is_senior')
-
-#не забудьте pip install -r requirments.txt 🐳🐳🐳
+```
+## не забудьте pip install -r requirements.txt 🐳🐳🐳
